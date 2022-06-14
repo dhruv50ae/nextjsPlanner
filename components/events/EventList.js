@@ -2,13 +2,10 @@ import React from "react";
 import EventItem from "./EventItem";
 
 const EventList = ({ items }) => {
-  return (
-    <ul>
-      {items.map((event) => {
-        <EventItem event={event} />;
-      })}
-    </ul>
-  );
+  const eventItems = items.map((event) => (
+    <EventItem key={event.id} event={event} />
+  ));
+  return <ul>{eventItems}</ul>;
 };
 
 export default EventList;
