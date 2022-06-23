@@ -3,6 +3,7 @@ import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
 import ErrorAlert from "../../components/ui/error-alert";
+import Head from "next/head";
 
 const EventDetailPage = ({ selectedEvent }) => {
   const event = selectedEvent;
@@ -16,6 +17,10 @@ const EventDetailPage = ({ selectedEvent }) => {
   const { title, date, location, image } = event;
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={event.description} />
+      </Head>
       <EventSummary title={title} />
       <EventLogistics
         date={date}
