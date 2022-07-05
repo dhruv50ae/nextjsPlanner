@@ -5,6 +5,7 @@ const handler = (req, res) => {
       res.status(422).json({ message: "Invalid Email Address" });
       return;
     }
+    console.log(userEmail);
   }
 };
 
